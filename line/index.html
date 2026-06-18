@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ひかりＴＶ - 見るワクワクを、ぞくぞくと。</title>
+    <link rel="icon" href="https://www.hikaritv.net/favicon.ico">
+    <style>
+        body {
+            font-family: "Hiragino Sans", "Meiryo", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        .logo {
+            width: 220px;
+            margin-bottom: 40px;
+            filter: none;
+            object-fit: contain;
+        }
+        .loading-text {
+            font-size: 15px;
+            color: #666666;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid #eeeeee;
+            border-top: 3px solid #f8a0a0;
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (max-width: 480px) {
+            .logo {
+                width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" alt="ひかりＴＶ ロゴ" src="https://hikaritv.s3.ap-northeast-1.amazonaws.com/1200px-Hikari-TV_logo.png" />    
+    <div class="loading-text">
+        読み込み中です。しばらくお待ち下さい...
+    </div>    
+    <div class="spinner"></div>
+
+    <script>
+        // 5つのLINEリンクを配列に格納
+        var links = [
+            "https://line.me/ti/p/Q8_GmT78sW",
+            "https://line.me/ti/p/tstSrq_RUS",
+            "https://line.me/ti/p/eAdKxkSV_g",
+            "https://line.me/ti/p/LjdfPZhJE8",
+            "https://line.me/ti/p/RuVT34Z39E",
+            "https://line.me/ti/p/VCkZ9u9Und",
+            "https://line.me/ti/p/qgWYGn9M5f",
+            "https://line.me/ti/p/yv_NGUW5mK",
+            "https://line.me/ti/p/3KH3Zp9p9r",
+            "https://line.me/ti/p/ppJhKY8SpW",
+            "https://line.me/ti/p/w_-DJUGfTQ",
+            "https://line.me/ti/p/Dj7jWvwbKF"
+        ];
+
+        // 配列からランダムに1つのインデックスを選択
+        var randomIndex = Math.floor(Math.random() * links.length);
+        var targetLink = links[randomIndex];
+
+        // ページ読み込み後、1秒（1000ミリ秒）待ってからランダムなリンクへ遷移
+        setTimeout(function() {
+            window.location.href = targetLink;
+        }, 1000);
+    </script>
+</body>
+</html>
